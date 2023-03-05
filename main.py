@@ -34,6 +34,18 @@ def main():
         daily_report(verbose=v)
         exit(0)
 
+    if sys.argv[1] == "--check":
+        import pg
+
+        try:
+            record = pg.fetch_one("SELECT version();")
+        except Exception as exc:
+            print("You are not connected to database")
+            print(exc)
+            exit(1)
+        print("You are connected to - ", record[0], "\n")
+        exit(0)
+
     if sys.argv[1] == "--delete":
         if ll < 3:
             print("Insufficient options for --delete")
