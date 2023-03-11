@@ -83,14 +83,14 @@ def main():
         run_server()
         exit(0)
 
-    if sys.argv[1] == "-a":
-        from news import read_article
+    # if sys.argv[1] == "-a":
+    #     from news import read_article
 
-        url = sys.argv[2]
-        if url.startswith("https://") or url.startswith("http://"):
-            read_article(url)
-        else:
-            print("Invalid url")
+    #     url = sys.argv[2]
+    #     if url.startswith("https://") or url.startswith("http://"):
+    #         read_article(url)
+    #     else:
+    #         print("Invalid url")
 
 
 if __name__ == "__main__":
